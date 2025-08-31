@@ -1,13 +1,9 @@
 name: Contexts
 on: push
 jobs:
-  run:
+  print:
     runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }}
     steps:
-      - run: echo "${{ github.actor }}"
-      - run: echo "${{ github.run_id }}"
-      - run: echo "${{ github.head_ref }}"
-      - run: echo "${{ github.workspace }}"
-      - run: echo "${{ github.repository }}"
-      - run: echo "${{ github.repository_owner }}"
-      - run: echo "${{ github.event }}"
+      - run: echo "${ACTOR}"
